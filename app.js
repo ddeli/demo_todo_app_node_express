@@ -6,7 +6,6 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.static("public"));
-app.use('images/favicon-16x16.png', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // let toDoListWork = [];
@@ -24,6 +23,12 @@ app.post("/today", (req, res) => {
   // console.log("After click on TODAY Button: " + toDoListToday);
 });
 
+// Post Request handler from Work Button
+app.post("/work", (req, res) => {
+  res.render("work.ejs", { worklist: toDoListWork });
+  // console.log("After click on WORK Button: " + toDoListToday);
+});
+
 // Post Request handler from SubmitToday Button
 app.post("/submitToday", (req, res) => {
   if (req.body["taskSubmitToday"] != "") {
@@ -35,6 +40,18 @@ app.post("/submitToday", (req, res) => {
   //Make the get route work and render the index.ejs file.
 
   // console.log("After click the SUBMIT Button: " + toDoListToday);
+});
+
+// Post Request handler from SubmitWork Button
+app.post("/submitWork", (req, res) => {
+  if (req.body["taskSubmitWork"] != "") {
+    toDoListWork.push(req.body["taskSubmitWork"]);
+    res.render("work.ejs", { worklist: toDoListWork });
+  } else {
+    // console.log("Please enter task");
+  }
+
+  // console.log("After Click SUBMIT Button: " + toDoListWork);
 });
 
 const server = app.listen(port, () => {
