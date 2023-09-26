@@ -33,22 +33,16 @@ app.post("/work", (req, res) => {
 app.post("/submitToday", (req, res) => {
   if (req.body["taskSubmitToday"] != "") {
     toDoListToday.push(req.body["taskSubmitToday"]);
-    res.render("index.ejs", { todaylist: toDoListToday });
-  } else {
-    // console.log("Please enter task");
   }
-  // console.log("After click the SUBMIT Button: " + toDoListToday);
+  res.render("index.ejs", { todaylist: toDoListToday });
 });
 
 // Post Request handler from SubmitWork Button
 app.post("/submitWork", (req, res) => {
   if (req.body["taskSubmitWork"] != "") {
     toDoListWork.push(req.body["taskSubmitWork"]);
-    res.render("work.ejs", { worklist: toDoListWork });
-  } else {
-    // console.log("Please enter task");
   }
-  // console.log("After Click SUBMIT Button: " + toDoListWork);
+  res.render("work.ejs", { worklist: toDoListWork });
 });
 
 const server = app.listen(port, () => {
