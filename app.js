@@ -8,7 +8,7 @@ const port = process.env.PORT || 3001;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// let toDoListWork = [];
+let toDoListWork = [];
 let toDoListToday = [];
 
 //Make the get route work and render the index.ejs file.
