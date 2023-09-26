@@ -37,8 +37,6 @@ app.post("/submitToday", (req, res) => {
   } else {
     // console.log("Please enter task");
   }
-  //Make the get route work and render the index.ejs file.
-
   // console.log("After click the SUBMIT Button: " + toDoListToday);
 });
 
@@ -50,7 +48,6 @@ app.post("/submitWork", (req, res) => {
   } else {
     // console.log("Please enter task");
   }
-
   // console.log("After Click SUBMIT Button: " + toDoListWork);
 });
 
