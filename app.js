@@ -11,9 +11,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let toDoListWork = [];
 let toDoListToday = [];
 
+//Make the get route work and render the index.ejs file.
 app.get("/", (req, res) => {
-  res.render("index.ejs");
-  console.log("Render of Root");
+  res.render("index.ejs", { todaylist: toDoListToday });
+  // console.log("After initial GET req: " + toDoListToday);
+});
+
+// Post Request handler from Today Button
+app.post("/today", (req, res) => {
+  res.render("index.ejs", { todaylist: toDoListToday });
+  // console.log("After click on TODAY Button: " + toDoListToday);
 });
 
 const server = app.listen(port, () => {
