@@ -54,7 +54,8 @@ const html = `
   </head>
   <body>
     <section>
-      Hello from Render!
+      Hello
+      This is a Template which i will use to implement my yet nonpersistent ToDo List App!
     </section>
   </body>
 </html>
