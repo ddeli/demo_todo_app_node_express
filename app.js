@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.static("public"));
+app.use('images/favicon-16x16.png', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // let toDoListWork = [];
