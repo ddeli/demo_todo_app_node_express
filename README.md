@@ -2,7 +2,7 @@
 
 This is a yet non-persistent implementation of a ToDo list for demo and learning purpose.
 
-The app in this repo is deployed at [https://demo-todo-list-node-express.onrender.com/](https://demo-todo-list-node-express.onrender.com/).
+The app in this repo is deployed at [https://demo-todo-list-node-express.onrender.com/](https://demo-todo-list-node-express.onrender.com/) with a free instance of Render.
 
 ## Deployment
 
