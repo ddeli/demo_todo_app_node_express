@@ -99,9 +99,9 @@ app.post("/submitchecked", async (req, res) => {
 //   res.render("work.ejs", { worklist: toDoListWork });
 // });
 
-// const server = app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}!`)
-// });
+const server = app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`)
+});
 
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
