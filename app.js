@@ -3,7 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-const uri = process.env.KEY;
+const uri = process.env.uri;
 
 const { Schema } = mongoose;
 
