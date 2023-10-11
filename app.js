@@ -1,9 +1,9 @@
 
-import express from "express";// const express = require("express");
+import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-const uri = "mongodb+srv://dbDeniz:dbDeniz@cluster0.xha9egp.mongodb.net/toDoList?retryWrites=true&w=majority";
+const uri = process.env.KEY;
 
 const { Schema } = mongoose;
 
@@ -28,12 +28,11 @@ const Item = mongoose.model('Item', itemsSchema);
 // let toDoListWork = [];
 let toDoListToday = [];
 
+//Delete Items older then 48h
 let deletenumber = await Item.deleteMany({date: { $lt: new Date()-(1000*60*60*24*2)}});
-console.log("Delete Items older then 48h: ")
-console.log(deletenumber)
+
+//Delete Done Items older then two hours
 deletenumber = await Item.deleteMany({date: { $lt: new Date()-(1000*60*60*2)},done:{$eq: true}});
-console.log("Delete Done Items older then two hours: ")
-console.log(deletenumber)
 
 try{
   toDoListToday = await Item.find();
